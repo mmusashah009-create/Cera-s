@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+    <body style="margin:0; min-height:100vh; background: linear-gradient(135deg, #f3ede7, #2b2b2b);"> 
+ <!-- NAVBAR -->
+   <!-- NAVBAR -->
+  <nav class="w-full px-6 py-4 flex items-center bg-white/80 backdrop-blur-md ">
+    <p class="font-[Montserrat] font-semibold text-4xl lg:text-7xl text-[#1f1f1f] md:text-6xl text-4xl">Cera's</p>
+
+    <!-- Hamburger for mobile -->
+    <div id="hamburger" class="lg:hidden flex flex-col justify-between w-6 h-5 cursor-pointer md:ml-130 ml-50 ">
+      <span class="block w-full h-0.5 bg-black transition-all"></span>
+      <span class="block w-full h-0.5 bg-black transition-all"></span>
+      <span class="block w-full h-0.5 bg-black transition-all"></span>
+    </div>
+
+    <!-- Desktop menu -->
+    <ul class="hidden lg:flex gap-7 text-lg font-medium text-[#1f1f1f] lg:ml-100">
+      <li><a href="home.html" class="hover:text-gray-600 text-2xl">Home</a></li>
+      <li><a href="#" class="hover:text-gray-600 text-2xl">About</a></li>
+      <li class="relative">
+  <button onclick="toggleProducts(event)"
+  class="hover:text-gray-600 text-2xl flex items-center gap-1">
+  Products <span>▾</span>
+</button>
+
+  <!-- Dropdown -->
+  <ul id="productsDropdown"
+    class="hidden absolute left-0 mt-3 w-56 bg-white shadow-lg rounded-lg overflow-hidden z-50">
+
+    <li>
+      <a href="compare.html"
+         class="block px-5 py-3 hover:bg-gray-100">
+        Compare Products
+      </a>
+    </li>
+
+    <li>
+      <a href="products.html"
+         class="block px-5 py-3 hover:bg-gray-100">
+        All Products
+      </a>
+    </li>
+
+
+  </ul>
+</li>
+      <li><a href="#" class="hover:text-gray-600 text-2xl">Categories</a></li>
+      <li><a href="catalogue.html" class="hover:text-gray-600 text-2xl">E Catalogue</a></li>
+    </ul>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden px-6 py-4 bg-white/80 backdrop-blur-md lg:hidden ">
+    <ul class="flex flex-col gap-4 text-lg font-medium text-[#1f1f1f]">
+      <li><a href="home.html" class="hover:text-gray-600">Home</a></li>
+      <li><a href="#" class="hover:text-gray-600">About</a></li>
+      <li><a href="products.html" class="hover:text-gray-600">Products</a></li>
+      <li><a href="" class="hover:text-gray-600">Contact Us </a></li>
+       <li><a href="catalogue.html" class="hover:text-gray-600"> E Catalogue </a></li>
+    </ul>
+    </ul>
+  </div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Tiles</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body style="margin:0; min-height:100vh; background: linear-gradient(135deg, #f3ede7, #2b2b2b);">
+
+<!-- HEADER -->
+<section class="text-center py-16">
+  <h2 class="text-4xl md:text-5xl font-bold text-[#1f1f1f]">
+    Compare Tiles
+  </h2>
+  <p class="mt-4 text-lg text-gray-700">
+    Select products to compare specifications
+  </p>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="max-w-7xl mx-auto px-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+    <!-- 1 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="floor1.avif" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Marble Floor Tile</h3>
+      <p class="text-sm text-gray-600">600×600 mm</p>
+      <button onclick="selectProduct(this,'Marble Floor Tile','600×600 mm','Floor','Premium Marble')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 2 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="glossy.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Glossy Wall Tile</h3>
+      <p class="text-sm text-gray-600">300×600 mm</p>
+      <button onclick="selectProduct(this,'Glossy Wall Tile','300×600 mm','Wall','Easy Clean')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 3 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="stone.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Stone Finish Tile</h3>
+      <p class="text-sm text-gray-600">600×1200 mm</p>
+      <button onclick="selectProduct(this,'Stone Finish Tile','600×1200 mm','Floor','Natural Look')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 4 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="outdoor.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Outdoor Tile</h3>
+      <p class="text-sm text-gray-600">Heavy Duty</p>
+      <button onclick="selectProduct(this,'Outdoor Tile','Heavy Duty','Outdoor','Weather Proof')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 5 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="batroom.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Bathroom Tile</h3>
+      <p class="text-sm text-gray-600">Anti Slip</p>
+      <button onclick="selectProduct(this,'Bathroom Tile','Anti Slip','Bathroom','Water Resistant')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 6 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="wood.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Wood Look Tile</h3>
+      <p class="text-sm text-gray-600">Natural Finish</p>
+      <button onclick="selectProduct(this,'Wood Look Tile','Natural Finish','Floor','Wood Texture')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 7 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="ceramic.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Ceramic Tile</h3>
+      <p class="text-sm text-gray-600">Easy Clean</p>
+      <button onclick="selectProduct(this,'Ceramic Tile','Easy Clean','Wall','Classic Finish')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 8 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="porcelain.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Porcelain Tile</h3>
+      <p class="text-sm text-gray-600">High Strength</p>
+      <button onclick="selectProduct(this,'Porcelain Tile','High Strength','Floor','Durable Surface')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 9 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="matte.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Matte Finish Tile</h3>
+      <p class="text-sm text-gray-600">Smooth Look</p>
+      <button onclick="selectProduct(this,'Matte Finish Tile','Smooth Look','Wall','Non Glossy')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 10 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="pattern.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Pattern Tile</h3>
+      <p class="text-sm text-gray-600">Designer</p>
+      <button onclick="selectProduct(this,'Pattern Tile','Designer','Wall','Decorative Style')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 11 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="large.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Large Slab Tile</h3>
+      <p class="text-sm text-gray-600">700×800</p>
+      <button onclick="selectProduct(this,'Large Slab Tile','700×800','Floor','Large Format')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 12 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="rustic.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Rustic Tile</h3>
+      <p class="text-sm text-gray-600">900×400</p>
+      <button onclick="selectProduct(this,'Rustic Tile','900×400','Floor','Natural Look')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 13 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="wio.avif" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Pure White Tile</h3>
+      <p class="text-sm text-gray-600">400×600</p>
+      <button onclick="selectProduct(this,'Pure White Tile','400×600','Wall','Minimal Design')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 14 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="black.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Black Marble Tile</h3>
+      <p class="text-sm text-gray-600">900×1000</p>
+      <button onclick="selectProduct(this,'Black Marble Tile','900×1000','Floor','Luxury Finish')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 15 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="beige.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Beige Tile</h3>
+      <p class="text-sm text-gray-600">Warm Tone</p>
+      <button onclick="selectProduct(this,'Beige Tile','Warm Tone','Floor','Soft Look')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+    <!-- 16 -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <img src="gray.jpg" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="mt-3 font-semibold">Grey Stone Tile</h3>
+      <p class="text-sm text-gray-600">Urban Style</p>
+      <button onclick="selectProduct(this,'Grey Stone Tile','Urban Style','Floor','Modern Look')"
+        class="mt-3 px-4 py-2 bg-black text-white rounded-full">Compare</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section id="compareSection" class="hidden max-w-6xl mx-auto px-6 py-20">
+  <h3 class="text-3xl font-bold text-center mb-8">Comparison</h3>
+
+  <div class="overflow-x-auto bg-white rounded-xl shadow">
+    <table class="w-full text-left border-collapse">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-4">Product</th>
+          <th class="p-4">Size</th>
+          <th class="p-4">Category</th>
+          <th class="p-4">Feature</th>
+        </tr>
+      </thead>
+      <tbody id="compareBody"></tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<section style="background-color: #6e6d6d;" class="py-16  lg:mt-130 md:mt-50 mt-40" >
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 class="text-3xl md:text-4xl font-[Montserrat] font-bold text-[#1f1f1f] text-white">
+      Also Available On
+    </h2>
+    <p class="text-lg text-gray-600 mt-3 text-white">
+      Shop Cera’s tiles from trusted online marketplaces
+    </p>
+
+    <!-- Logos -->
+    <div class="flex flex-wrap justify-center items-center gap-10 mt-10" >
+
+      <!-- Amazon -->
+      <a href="#" class="hover:scale-110 transition">
+        <img id="award" src="amazon.jpg" alt="Amazon" class="h-12 md:h-16 ">
+      </a>
+
+      <!-- Daraz -->
+      <a href="#" class="hover:scale-110 transition">
+        <img id="award" src="daraz.png" alt="Daraz" class="h-12 md:h-16">
+      </a>
+
+      <!-- eBay -->
+      <a href="#" class="hover:scale-110 transition">
+        <img id="award"  src="ebay.jpg" alt="eBay" class="h-12 md:h-16">
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer style="background:#1f1f1f;" class="mt-32">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+
+    <!-- Brand -->
+    <div>
+      <h3 class="text-3xl font-[Montserrat] font-semibold text-white">
+        Cera’s
+      </h3>
+      <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+        Premium tiles crafted for modern architecture,
+        trusted by designers and professionals worldwide.
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex justify-center md:justify-start gap-6 mt-6">
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/ceras" target="_blank"
+           class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+          <img id="award" src="insta.jpg" alt="Instagram"
+               class="w-5 h-5 object-contain">
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://facebook.com/ceras" target="_blank"
+           class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+          <img id="award" src="facebook.jpg" alt="Facebook"
+               class="w-5 h-5 object-contain">
+        </a>
+
+        <!-- Gmail -->
+        <a href="mailto:ceras@gmail.com"
+           class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+          <img  id="award" src="gmail.jpg" alt="Email"
+               class="w-5 h-5 object-contain">
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div>
+      <h4 class="text-lg font-semibold text-white mb-4">
+        Explore
+      </h4>
+      <ul class="space-y-3 text-gray-400">
+        <li><a href="home.html" class="hover:text-white transition">Home</a></li>
+        <li><a href="#" class="hover:text-white transition">About</a></li>
+        <li><a href="products.html" class="hover:text-white transition">Products</a></li>
+        <li><a href="#" class="hover:text-white transition">Categories</a></li>
+        <li><a href="catalogue.html" class="hover:text-white transition">E-Catalogue</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class="text-lg font-semibold text-white mb-4">
+        Contact
+      </h4>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>📍 Pakistan</li>
+        <li>📞 +92 XXX XXX XXXX</li>
+        <li>✉️ ceras@gmail.com</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-white/10 py-6 text-center">
+    <p class="text-gray-500 text-sm">
+      © 2025 Cera’s Tiles. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+let selected = [];
+
+function selectProduct(btn, name, size, category, feature) {
+  const index = selected.findIndex(p => p.name === name);
+
+  if (index !== -1) {
+    selected.splice(index, 1);
+    btn.innerText = "Compare";
+    btn.classList.remove("bg-gray-400");
+    btn.classList.add("bg-black");
+  } else {
+    if (selected.length >= 3) {
+      alert("You can compare up to 3 products only");
+      return;
+    }
+    selected.push({ name, size, category, feature });
+    btn.innerText = "Selected";
+    btn.classList.remove("bg-black");
+    btn.classList.add("bg-gray-400");
+  }
+  renderCompare();
+}
+
+function renderCompare() {
+  const section = document.getElementById("compareSection");
+  const body = document.getElementById("compareBody");
+
+  body.innerHTML = "";
+
+  if (selected.length === 0) {
+    section.classList.add("hidden");
+    return;
+  }
+
+  section.classList.remove("hidden");
+
+  selected.forEach(p => {
+    body.innerHTML += `
+      <tr class="border-t">
+        <td class="p-4 font-semibold">${p.name}</td>
+        <td class="p-4">${p.size}</td>
+        <td class="p-4">${p.category}</td>
+        <td class="p-4">${p.feature}</td>
+      </tr>
+    `;
+  });
+}
+
+function toggleProducts() {
+    const dropdown = document.getElementById("productsDropdown");
+    dropdown.classList.toggle("hidden");
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("button");
+    const dropdown = document.getElementById("productsDropdown");
+
+    if (!btn || !btn.innerText.includes("Products")) {
+      dropdown.classList.add("hidden");
+    }
+  });
+
+</script>
+
+</body>
+</html>
+</body>
+</html>

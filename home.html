@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cera's Tiles</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body style="margin:0; min-height:100vh; background: linear-gradient(135deg, #f3ede7, #2b2b2b);"> 
+ <!-- NAVBAR -->
+  <nav class="w-full px-6 py-4 flex items-center bg-white/80 backdrop-blur-md ">
+    <p class="font-[Montserrat] font-semibold text-4xl lg:text-7xl text-[#1f1f1f] md:text-6xl text-4xl">Cera's</p>
+
+    <!-- Hamburger for mobile -->
+    <div id="hamburger" class="lg:hidden flex flex-col justify-between w-6 h-5 cursor-pointer md:ml-130 ml-50 ">
+      <span class="block w-full h-0.5 bg-black transition-all"></span>
+      <span class="block w-full h-0.5 bg-black transition-all"></span>
+      <span class="block w-full h-0.5 bg-black transition-all"></span>
+    </div>
+
+    <!-- Desktop menu -->
+    <ul class="hidden lg:flex gap-7 text-lg font-medium text-[#1f1f1f] lg:ml-100">
+      <li><a href="home.html" class="hover:text-gray-600 text-2xl">Home</a></li>
+      <li><a href="#" class="hover:text-gray-600 text-2xl">About</a></li>
+      <li class="relative">
+  <button onclick="toggleProducts(event)"
+  class="hover:text-gray-600 text-2xl flex items-center gap-1">
+  Products <span>▾</span>
+</button>
+
+  <!-- Dropdown -->
+  <ul id="productsDropdown"
+    class="hidden absolute left-0 mt-3 w-56 bg-white shadow-lg rounded-lg overflow-hidden z-50">
+
+    <li>
+      <a href="compare.html"
+         class="block px-5 py-3 hover:bg-gray-100">
+        Compare Products
+      </a>
+    </li>
+
+    <li>
+      <a href="products.html"
+         class="block px-5 py-3 hover:bg-gray-100">
+        All Products
+      </a>
+    </li>
+
+
+  </ul>
+</li>
+      <li><a href="#" class="hover:text-gray-600 text-2xl">Categories</a></li>
+      <li><a href="catalogue.html" class="hover:text-gray-600 text-2xl">E Catalogue</a></li>
+    </ul>
+  </nav>
+
+ 
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden px-6 py-4 bg-white/80 backdrop-blur-md lg:hidden ">
+    <ul class="flex flex-col gap-4 text-lg font-medium text-[#1f1f1f]">
+      <li><a href="home.html" class="hover:text-gray-600">Home</a></li>
+      <li><a href="#" class="hover:text-gray-600">About</a></li>
+      <li><a href="products.html" class="hover:text-gray-600">Products</a></li>
+      <li><a href="" class="hover:text-gray-600">Contact Us </a></li>
+       <li><a href="catalogue.html" class="hover:text-gray-600"> E Catalogue </a></li>
+    </ul>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <div class="max-w-6xl mx-auto px-6 mt-20 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-5xl font-[Montserrat] font-bold text-[#1f1f1f]">
+      Premium tiles that transform spaces into statements.
+    </h1>
+    <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-[#1f1f1f]">
+      Explore wall, floor, and outdoor tiles crafted for modern spaces.
+    </p>
+    <a href="products.html" class="inline-block mt-5 px-6 py-3 border-2 rounded-md font-[Montserrat] font-medium text-white bg-[#1f1f1f] hover:bg-gray-800 transition">
+      Shop Now
+    </a>
+  </div> <hr style="margin-top: 50px; color: rgb(134, 132, 132);">
+
+
+
+  
+<section class="mt-20">
+  <div class="w-full">
+
+    <video
+      class="w-full h-[240px] sm:h-[360px] md:h-[480px] lg:h-[600px] object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="tiles3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+</section>
+</section>
+  <!-- FEATURES SECTION -->
+  <div class="max-w-6xl mx-auto px-6 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center mt-10 lg:ml-90">
+    <!-- Fast Delivery -->
+    <div class="flex flex-col items-center gap-6 lg:-ml-20">
+      <img id="award" src="download.png" alt="Fast Delivery" class="w-24 md:w-30 lg:w-30 hover:scale-110 transition">
+      <p class="text-2xl md:text-3xl font-[Montserrat] font-semibold text-[#1f1f1f] ">
+        Fast Delivery Globally
+      </p>
+    </div>
+
+    <!-- Premium Quality -->
+    <div class="flex flex-col items-center gap-12  ">
+      <img id="award" src="award.avif" alt="Premium Quality" class="w-24 hover:scale-110 transition ">
+      <p class="text-3xl md:text-3xl font-[Montserrat] font-semibold text-[#1f1f1f]">
+        Premium Quality 
+      </p>
+    </div> 
+</div> <hr style="margin-top: 10px; color: rgb(139, 138, 138);"> 
+
+   
+
+  <!-- FEATURED PRODUCTS -->
+
+
+  <!-- Products Grid -->
+ <!-- FEATURED PRODUCTS -->
+<section  class=" py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-[Montserrat] font-bold text-[#2e2e2e]">
+      Featured Products
+    </h2>
+    <p class="text-lg md:text-2xl text-[#1f1f1f] mt-4">
+      The Best For Your Style
+    </p>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
+      
+      <!-- Product Card 1 -->
+      <div class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 hover:scale-105 transition">
+        <img src="floor1.avif" alt="Product 1" class="mx-auto h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-[#1f1f1f] font-semibold text-lg"> <button type="submit"> <a href="#">  Marble Floor Tiles </a></button></h3>
+        <p class=" mt-1">Elegant & durable marble tiles.</p>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 hover:scale-105 transition">
+        <img src="wall.avif" alt="Product 2" class="mx-auto h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-[#1f1f1f] font-semibold text-lg"><button type="submit"> <a href="#"> Outdoor Marble Tiles  </a></button></h3>
+        <p class="mt-1">Perfect for patios and gardens.</p>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 hover:scale-105 transition">
+        <img src="tt.avif" alt="Product 3" class="mx-auto h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-[#1f1f1f] font-semibold text-lg"><button type="submit"> <a href="#">  Glossy Ceramic Tiles </a></button></h3>
+        <p class=" mt-1 text-sm">Stylish & easy-to-clean surface.</p>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 hover:scale-105 transition">
+        <img src="stone.jpg" alt="Product 4" class="mx-auto h-48 object-cover rounded-lg mb-4 ">
+        <h3 class="text-[#1f1f1f] font-semibold text-lg"><button type="submit"> <a href="#">  Textured Stone Tiles </a></button></h3>
+        <p class=" mt-1">Natural look for modern interiors.</p>
+      </div>   </div> </div></section> <hr style="margin-top: 5px; color: rgb(104, 103, 103);">
+      
+      
+      
+      <!-- Testimonial Banner -->
+<div class="w-full h-96 md:h-[500px] lg:h-[600px] bg-cover bg-center flex flex-col items-center justify-center px-6 text-center md:mt-20 mt-20 gap-6"
+     style="background-image: url('assets/86c0b72d-bea9-405d-af7e-f3dbe05b6e6e.png');">
+
+
+     
+  <h2 style="color: #1f1f1f;" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[Montserrat] font-bold text-white max-w-3xl md:mt-20 lg:mt-70 mt-10 underline">
+    "Our living room looks amazing thanks to Cera’s tiles!"
+  </h2>
+
+  <p style="color: #1f1f1f;" class="mt-4 text-lg sm:text-xl md:text-2xl font-[Montserrat] text-white underline ">
+    Joseph.
+  </p>
+  
+   <h2   style="color: #1f1f1f;" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[Montserrat] font-bold text-white max-w-3xl lg:mt-30 md:mt-20 underline">
+    “High-quality tiles and fast delivery. Love it!”
+  </h2>
+
+  <p   style="color: #1f1f1f;" class="mt-4 text-lg sm:text-xl md:text-2xl font-[Montserrat] text-white ">
+    Mark T.
+  </p>
+
+  <h2   style="color: #1f1f1f;"  class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[Montserrat] font-bold text-white max-w-3xl lg:mt-40 md:mt-20 underline">
+    “The floor tiles are stunning and super durable.”
+  </h2>
+
+  <p  style="color: #1f1f1f;" class="mt-4 text-lg sm:text-xl md:text-2xl font-[Montserrat] text-white">
+    – David R.
+  </p>
+
+</div>
+
+
+
+
+
+
+<section style="background-color: #6e6d6d;" class="py-16  lg:mt-130 md:mt-50 mt-40" >
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 class="text-3xl md:text-4xl font-[Montserrat] font-bold text-[#1f1f1f] text-white">
+      Also Available On
+    </h2>
+    <p class="text-lg text-gray-600 mt-3 text-white">
+      Shop Cera’s tiles from trusted online marketplaces
+    </p>
+
+    <!-- Logos -->
+    <div class="flex flex-wrap justify-center items-center gap-10 mt-10" >
+
+      <!-- Amazon -->
+      <a href="#" class="hover:scale-110 transition">
+        <img id="award" src="amazon.jpg" alt="Amazon" class="h-12 md:h-16 ">
+      </a>
+
+      <!-- Daraz -->
+      <a href="#" class="hover:scale-110 transition">
+        <img id="award" src="daraz.png" alt="Daraz" class="h-12 md:h-16">
+      </a>
+
+      <!-- eBay -->
+      <a href="#" class="hover:scale-110 transition">
+        <img id="award"  src="ebay.jpg" alt="eBay" class="h-12 md:h-16">
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer style="background:#1f1f1f;" class="mt-32">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+
+    <!-- Brand -->
+    <div>
+      <h3 class="text-3xl font-[Montserrat] font-semibold text-white">
+        Cera’s
+      </h3>
+      <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+        Premium tiles crafted for modern architecture,
+        trusted by designers and professionals worldwide.
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex justify-center md:justify-start gap-6 mt-6">
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/ceras" target="_blank"
+           class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+          <img id="award" src="insta.jpg" alt="Instagram"
+               class="w-5 h-5 object-contain">
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://facebook.com/ceras" target="_blank"
+           class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+          <img id="award" src="facebook.jpg" alt="Facebook"
+               class="w-5 h-5 object-contain">
+        </a>
+
+        <!-- Gmail -->
+        <a href="mailto:ceras@gmail.com"
+           class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+          <img  id="award" src="gmail.jpg" alt="Email"
+               class="w-5 h-5 object-contain">
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div>
+      <h4 class="text-lg font-semibold text-white mb-4">
+        Explore
+      </h4>
+      <ul class="space-y-3 text-gray-400">
+        <li><a href="home.html" class="hover:text-white transition">Home</a></li>
+        <li><a href="#" class="hover:text-white transition">About</a></li>
+        <li><a href="products.html" class="hover:text-white transition">Products</a></li>
+        <li><a href="#" class="hover:text-white transition">Categories</a></li>
+        <li><a href="catalogue.html" class="hover:text-white transition">E-Catalogue</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class="text-lg font-semibold text-white mb-4">
+        Contact
+      </h4>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>📍 Pakistan</li>
+        <li>📞 +92 XXX XXX XXXX</li>
+        <li>✉️ ceras@gmail.com</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-white/10 py-6 text-center">
+    <p class="text-gray-500 text-sm">
+      © 2025 Cera’s Tiles. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+
+      const lines = hamburger.querySelectorAll("span");
+
+      lines[0].classList.toggle("rotate-45");
+      lines[0].classList.toggle("translate-y-2");
+
+      lines[1].classList.toggle("opacity-0");
+
+      lines[2].classList.toggle("-rotate-45");
+      lines[2].classList.toggle("-translate-y-2");
+    });
+
+    
+  function toggleProducts() {
+    const dropdown = document.getElementById("productsDropdown");
+    dropdown.classList.toggle("hidden");
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("button");
+    const dropdown = document.getElementById("productsDropdown");
+
+    if (!btn || !btn.innerText.includes("Products")) {
+      dropdown.classList.add("hidden");
+    }
+  });
+
+  </script>
+
+</body>
+</html>
