@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tile Product</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+</head>
+
+<body class="bg-[#0F172A] text-[#F9FAFB]">
+
+
+
+
+<!-- PRODUCT SECTION -->
+<section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14">
+
+  <!-- Image -->
+  <div class="rounded-2xl overflow-hidden shadow-lg">
+    <img id="productImg" class="w-full hover:scale-110 transition duration-700">
+  </div>
+
+  <!-- Details -->
+  <div>
+    <h1 id="productName" class="text-4xl font-bold text-[#C9A24D] mb-4"></h1>
+
+    <p class="text-gray-300 mb-6 leading-relaxed">
+      Premium ceramic tile with luxury finish, designed for modern
+      interiors and long-lasting durability.
+    </p>
+
+    <ul class="space-y-3 text-gray-300">
+      <li><b class="text-white">Category:</b> <span id="productCat"></span></li>
+      <li><b class="text-white">Size:</b> 24 × 48</li>
+      <li><b class="text-white">Finish:</b> Polished</li>
+      <li><b class="text-white">Application:</b> Floor & Wall</li>
+    </ul>
+
+    <a href="cards.html"
+       class="inline-block mt-8 px-8 py-3 bg-[#C9A24D] text-black rounded-xl font-semibold hover:scale-105 transition">
+      Back to Gallery
+    </a>
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+
+  <h2 class="text-3xl font-bold text-center mb-14">
+    Related Products
+  </h2>
+
+  <div id="relatedGrid"
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  </div>
+
+</section>
+
+<script>
+  /* PRODUCT DATABASE */
+  const products = [
+    { img:"assets/1.jpg", name:"BC-9542", cat:"wall tiles" },
+    { img:"assets/10.jpg", name:"BC-9543", cat:"wall tiles" },
+    { img:"assets/2.jpg", name:"BC-9544", cat:"wall tiles" },
+    { img:"assets/9.jpg", name:"BC-9545", cat:"wall tiles" },
+    { img:"assets/3.jpg", name:"BC-9546", cat:"wall tiles" },
+    { img:"assets/12.jpg", name:"BC-9547", cat:"wall tiles" },
+    { img:"assets/4.jpg", name:"BC-9548", cat:"wall tiles" },
+    { img:"assets/8.jpg", name:"BC-9549", cat:"wall tiles" },
+    { img:"assets/6.jpg", name:"BC-9550", cat:"wall tiles" }
+  ];
+  
+  /* GET URL DATA */
+  const params = new URLSearchParams(window.location.search);
+  const currentImg  = params.get("img");
+  const currentName = params.get("name");
+  const currentCat  = params.get("cat");
+  
+  /* SAFETY CHECK */
+  if (!currentImg || !currentName || !currentCat) {
+    window.location.href = "cards.html";
+  }
+  
+  /* SET PRODUCT DATA */
+  document.getElementById("productImg").src = currentImg;
+  document.getElementById("productName").textContent = currentName;
+  document.getElementById("productCat").textContent = currentCat;
+  
+  /* RELATED PRODUCTS */
+  const relatedGrid = document.getElementById("relatedGrid");
+  
+  let related = products.filter(
+    p => p.cat === currentCat && p.name !== currentName
+  );
+  
+  if (related.length < 4) {
+    related = related.concat(
+      products.filter(p => p.cat !== currentCat && p.name !== currentName)
+    );
+  }
+  
+  related.slice(0,4).forEach(p => {
+    relatedGrid.innerHTML += `
+      <a href="p.html?img=${encodeURIComponent(p.img)}&name=${encodeURIComponent(p.name)}&cat=${encodeURIComponent(p.cat)}"
+         class="group block">
+        <div class="bg-[#111827] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+          <img src="${p.img}"
+               class="h-56 w-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="p-4 text-center">
+            <h3 class="font-semibold">${p.name}</h3>
+            <p class="text-gray-400 text-sm">${p.cat}</p>
+          </div>
+        </div>
+      </a>
+    `;
+  });
+  </script>
+  
+
+</body>
+</html>

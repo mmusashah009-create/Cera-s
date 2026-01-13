@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tile Detail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#0F172A] text-[#F9FAFB]">
+
+<!-- PRODUCT DETAIL -->
+<section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14">
+
+  <!-- IMAGE -->
+  <div class="rounded-3xl overflow-hidden shadow-lg">
+    <img id="productImg" class="w-full hover:scale-110 transition duration-700">
+  </div>
+
+  <!-- DETAILS -->
+  <div>
+    <h1 id="productName" class="text-4xl font-bold text-[#C9A24D] mb-4"></h1>
+
+    <p class="text-gray-300 mb-6 leading-relaxed">
+      Premium ceramic tile with luxury finish, designed for modern interiors
+      and long-lasting durability.
+    </p>
+
+    <ul class="space-y-3 text-gray-300">
+      <li><b class="text-white">Category:</b> <span id="productCat"></span></li>
+      <li><b class="text-white">Size:</b> 24 × 48</li>
+      <li><b class="text-white">Finish:</b> Polished</li>
+      <li><b class="text-white">Application:</b> Floor & Wall</li>
+    </ul>
+
+    <a href="cards3.html"
+       class="inline-block mt-8 px-8 py-3 bg-[#C9A24D] text-black rounded-xl font-semibold hover:scale-105 transition">
+      Back to Gallery
+    </a>
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+
+  <h2 class="text-3xl font-bold text-center mb-14">
+    Related Products
+  </h2>
+
+  <div id="relatedGrid"
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  </div>
+
+</section>
+
+<script>
+/* PRODUCT DATABASE (START FROM 33) */
+const products = [
+  { img:"assets/33.webp", name:"DGL-7843", cat:"Special tiles" },
+  { img:"assets/34.webp", name:"DGL-7844", cat:"Special tiles" },
+  { img:"assets/35.png", name:"DGL-7845", cat:"Special tiles" },
+  { img:"assets/36.webp", name:"DGL-7846", cat:"Special tiles" },
+  { img:"assets/37.png", name:"DGL-7847", cat:"Special tiles" },
+  { img:"assets/38.webp", name:"DGL-7848", cat:"Special tiles" },
+  { img:"assets/39.webp", name:"DGL-7849", cat:"Special tiles" },
+  { img:"assets/40.webp", name:"DGL-7850", cat:"Special tiles" },
+  { img:"assets/41.webp", name:"DGL-7850", cat:"Special tiles" },
+  { img:"assets/42.webp", name:"DGL-7852", cat:"Special tiles" },
+  { img:"assets/43.webp", name:"DGL-7853", cat:"Special tiles" },
+  { img:"assets/44.webp", name:"DGL-7854", cat:"Special tiles" },
+  { img:"assets/45.png", name:"DGL-7855", cat:"Special tiles" },
+  { img:"assets/46.png", name:"DGL-7856", cat:"Special tiles" },
+  { img:"assets/47.jpg", name:"DGL-7857", cat:"Special tiles" },
+  { img:"assets/48.jpg", name:"DGL-7858", cat:"Special tiles" }
+];
+
+/* URL DATA */
+const params = new URLSearchParams(window.location.search);
+const currentImg  = params.get("img");
+const currentName = params.get("name");
+const currentCat  = params.get("cat");
+
+/* SET CURRENT PRODUCT */
+document.getElementById("productImg").src = currentImg;
+document.getElementById("productName").innerText = currentName;
+document.getElementById("productCat").innerText = currentCat;
+
+/* SHUFFLE FUNCTION */
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+/* RELATED PRODUCTS LOGIC */
+let related = products.filter(
+  p => p.cat === currentCat && p.name !== currentName
+);
+
+if (related.length < 4) {
+  related = related.concat(
+    products.filter(p => p.name !== currentName && p.cat !== currentCat)
+  );
+}
+
+shuffle(related).slice(0,4).forEach(p => {
+  document.getElementById("relatedGrid").innerHTML += `
+    <a href="detail2.html?img=${p.img}&name=${p.name}&cat=${p.cat}"
+       class="group block">
+      <div class="bg-[#111827] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="${p.img}"
+             class="h-56 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">${p.name}</h3>
+          <p class="text-gray-400 text-sm">${p.cat}</p>
+        </div>
+      </div>
+    </a>
+  `;
+});
+</script>
+
+</body>
+</html>

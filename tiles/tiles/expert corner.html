@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Expert Corner | CERA’S</title>
+  <link rel="stylesheet" href="ex.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="text-[#F9FAFB]">
+
+  <!-- loader code -->
+  <div id="pageLoader" class="hidden fixed inset-0 z-50 flex items-center justify-center
+                bg-black/50 backdrop-blur-md transition-opacity duration-500">
+
+    <div class="relative flex items-center justify-center">
+      <div class="w-24 h-24 rounded-full border-4 border-[#C9A24D]/30
+                    border-t-[#C9A24D] animate-spin
+                    shadow-[0_0_30px_#C9A24D]"></div>
+
+      <span class="absolute text-[#C9A24D] font-bold tracking-widest text-lg">
+        CERA’S
+      </span>
+    </div>
+  </div>
+
+
+
+
+  <nav class="w-full sticky top-0 z-50 bg-[#0F172A] backdrop-blur px-6 py-4 border-b border-gray-300">
+    <div class="flex items-center justify-between max-w-7xl mx-auto relative">
+
+      <!-- Brand -->
+      <h1 class="text-2xl font-bold text-[#C9A24D]">CERA’S</h1>
+
+      <!-- Desktop Links (Centered) -->
+      <ul class="hidden lg:flex gap-8 text-lg font-medium text-white absolute left-1/2 transform -translate-x-1/2">
+        <li><a href="home.html" onclick="event.preventDefault(); showLoaderAndRedirect('home.html')"
+            class="hover:text-[#C9A24D]">Home</a></li>
+        <li><a href="category.html" onclick="event.preventDefault(); showLoaderAndRedirect('category.html')"
+            class="hover:text-[#C9A24D]">Category</a></li>
+        <li><a href="#.html" onclick="event.preventDefault(); showLoaderAndRedirect('#.html')"
+            class="hover:text-[#C9A24D]">Products Details</a></li>
+        <li><a href="expert corner.html" onclick="event.preventDefault(); showLoaderAndRedirect('expert corner.html')"
+            class="hover:text-[#C9A24D]">Expert Corner</a></li>
+        <li><a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+            class="hover:text-[#C9A24D]">Contact</a></li>
+      </ul>
+
+      <!-- Contact Us Button (Right, Desktop Only) -->
+      <a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+        class="hidden lg:inline-block relative px-6 py-2 font-semibold rounded-lg border-2 border-[#C9A24D] text-[#C9A24D] hover:text-[#0F172A] hover:bg-gradient-to-r hover:from-[#C9A24D] hover:to-[#FFD966] transition-all duration-300">
+        Contact Us
+      </a>
+
+      <!-- Hamburger (Mobile + iPad) -->
+      <button id="hamburger" class="lg:hidden flex flex-col gap-1">
+        <span class="w-6 h-[3px] bg-white block"></span>
+        <span class="w-6 h-[3px] bg-white block"></span>
+        <span class="w-6 h-[3px] bg-white block"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-[#0F172A] border-b border-gray-300 px-6 py-6">
+    <ul class="flex flex-col gap-4 text-lg text-white">
+      <li><a href="home.html" onclick="event.preventDefault(); showLoaderAndRedirect('home.html')"
+          class="hover:text-[#C9A24D]">Home</a></li>
+      <li><a href="category.html" onclick="event.preventDefault(); showLoaderAndRedirect('category.html')"
+          class="hover:text-[#C9A24D]">Category</a></li>
+      <li><a href="#.html" onclick="event.preventDefault(); showLoaderAndRedirect('#.html')"
+          class="hover:text-[#C9A24D]">Products Details</a></li>
+      <li><a href="expert corner.html" onclick="event.preventDefault(); showLoaderAndRedirect('expert corner.html')"
+          class="hover:text-[#C9A24D]">Expert Corner</a></li>
+      <li><a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+          class="hover:text-[#C9A24D]">Contact</a></li>
+    </ul>
+
+    <!-- Premium Contact Us Button -->
+    <div class="mt-10">
+      <a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')" class="block text-center relative px-6 py-3 font-semibold rounded-lg
+                  border-2 border-[#C9A24D] text-[#C9A24D]
+                  hover:text-[#0F172A]
+                  hover:bg-gradient-to-r hover:from-[#C9A24D] hover:to-[#FFD966]
+                  shadow-lg hover:shadow-[0_0_25px_rgba(201,162,77,0.6)]
+                  transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    function showLoaderAndRedirect(url) {
+      const loader = document.getElementById("pageLoader");
+      loader.classList.remove("hidden");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 1200); // Increased from 1200ms (1.2s) to 2000ms (2s)
+    }
+  </script>
+  <!-- TOGGLE SCRIPT -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      // Open/close menu
+      mobileMenu.classList.toggle('hidden');
+
+      // Animating The Hamburger
+      const lines = hamburger.querySelectorAll("span");
+
+      lines[0].classList.toggle("rotate-45");
+      lines[0].classList.toggle("translate-y-2");
+
+      lines[1].classList.toggle("opacity-0");
+
+      lines[2].classList.toggle("-rotate-45");
+      lines[2].classList.toggle("-translate-y-2");
+    });
+  </script>
+  <script src="app.js"></script>
+
+  <!-- 🔹 HEADER -->
+  <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+    <h1 class="text-5xl font-bold text-[#C9A24D] tracking-wide">
+      Expert Corner
+    </h1>
+    <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
+      Knowledge, guides, tools & expert insights to help you choose, install,
+      and maintain premium ceramic tiles.
+    </p>
+  </section>
+
+  <!-- 🔹 BLOGS SECTION -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+
+    <!-- <h2 class="text-3xl font-bold text-[#C9A24D] mb-10 text-center">
+    Expert Blogs
+  </h2> -->
+
+    <section class="max-w-7xl mx-auto px-6 pb-24 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- BLOGS -->
+      <div class="glass rounded-3xl p-8 hover:scale-105 transition">
+        <div class="text-[#C9A24D] text-4xl mb-4">📝</div>
+        <h3 class="text-2xl font-semibold mb-3">Blogs</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Latest tile trends, expert opinions, and design inspirations.
+        </p>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>• Modern tile designs</li>
+          <li>• Choosing tiles by room</li>
+          <li>• Luxury vs budget tiles</li>
+        </ul>
+      </div>
+
+      <!-- TILE GUIDES -->
+      <div class="glass rounded-3xl p-8 hover:scale-105 transition">
+        <div class="text-[#C9A24D] text-4xl mb-4">📘</div>
+        <h3 class="text-2xl font-semibold mb-3">Tile Guides</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Step-by-step guides for selecting and installing tiles correctly.
+        </p>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>• Wall vs Floor tiles</li>
+          <li>• Bathroom tile guide</li>
+          <li>• Outdoor tile tips</li>
+        </ul>
+      </div>
+
+      <!-- EDUCATIONAL VIDEOS -->
+      <div class="glass rounded-3xl p-8 hover:scale-105 transition">
+        <div class="text-[#C9A24D] text-4xl mb-4">🎥</div>
+        <h3 class="text-2xl font-semibold mb-3">Educational Videos</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Visual tutorials explaining tile installation, care & usage.
+        </p>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>• Installation process</li>
+          <li>• Tile polishing</li>
+          <li>• Cleaning methods</li>
+        </ul>
+      </div>
+
+      <!-- TILE CALCULATOR -->
+      <div class="glass rounded-3xl p-8 hover:scale-105 transition">
+        <div class="text-[#C9A24D] text-4xl mb-4">📐</div>
+        <h3 class="text-2xl font-semibold mb-3">Tile Calculator</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Calculate required tiles accurately for your space.
+        </p>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>• Installation process</li>
+          <li>• Tile polishing</li>
+          <li>• Cleaning methods</li>
+        </ul>
+        <!-- <div class="space-y-3">
+        <input id="area" type="number" placeholder="Area (sq.ft)"
+          class="w-full px-4 py-2 rounded-xl bg-[#0F172A] border border-gray-700 text-sm">
+        <button onclick="calcTiles()"
+          class="w-full py-2 rounded-xl bg-[#C9A24D] text-black font-semibold hover:opacity-90">
+          Calculate
+        </button>
+        <p id="result" class="text-sm text-gray-300"></p>
+      </div> -->
+      </div>
+
+    </section>
+    <h2 class="text-4xl font-bold text-[#C9A24D] mb-10 text-center">
+      Expert Blogs
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- BLOG CARD -->
+      <a href="https://www.youtube.com/watch?v=gNB5GCXuSDo"
+        class="glass rounded-3xl overflow-hidden hover:scale-105 transition">
+        <img src="assets/download (3).jpg" class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">
+            How to Choose the Perfect Tile
+          </h3>
+          <p class="text-sm text-gray-400">
+            Expert tips to select tiles based on room, usage & budget.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=m7geX9qmE7w"
+        class="glass rounded-3xl overflow-hidden hover:scale-105 transition">
+        <img src="assets/download (4).jpg" class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">
+            Wall vs Floor Tiles Explained
+          </h3>
+          <p class="text-sm text-gray-400">
+            Understand the key differences before you buy.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=dLrmEm5kCB4"
+        class="glass rounded-3xl overflow-hidden hover:scale-105 transition">
+        <img src="assets/download (5).jpg" class="h-56 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">
+            Installation Mistakes to Avoid
+          </h3>
+          <p class="text-sm text-gray-400">
+            Save money by avoiding common tile installation errors.
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="max-w-7xl mx-auto px-6 pb-32">
+    <div class="glass p-16 rounded-3xl text-center">
+
+      <h2 class="text-5xl font-bold text-[#C9A24D] mb-6">Tile Calculator</h2>
+      <p class="text-gray-400 mb-12">
+        Select tile size and enter room area to get exact quantity
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <input id="roomArea" type="number" placeholder="Total Area (sq ft)"
+          class="p-5 rounded-xl bg-[#020617] border border-white/10 text-lg">
+
+        <select id="tileSize" class="p-5 rounded-xl bg-[#020617] border border-white/10 text-lg text-gray-300">
+          <option value="">Select Tile Size</option>
+          <option value="12x12">12 x 12 inch</option>
+          <option value="12x24">12 x 24 inch</option>
+          <option value="24x24">24 x 24 inch</option>
+          <option value="24x48">24 x 48 inch</option>
+          <option value="32x32">32 x 32 inch</option>
+        </select>
+
+        <select id="wastage" class="p-5 rounded-xl bg-[#020617] border border-white/10 text-lg text-gray-300">
+          <option value="5">5% Extra (Normal)</option>
+          <option value="10">10% Extra (Design Cuts)</option>
+          <option value="15">15% Extra (Complex Layout)</option>
+        </select>
+
+      </div>
+
+      <button onclick="calculateTiles()"
+        class="mt-12 px-20 py-5 rounded-2xl bg-[#C9A24D] text-black font-bold text-xl hover:scale-105 transition">
+        Calculate Tiles
+      </button>
+
+      <div class="mt-12">
+        <p class="text-gray-400 text-sm">Required Tiles</p>
+        <p id="tileResult" class="text-7xl font-extrabold text-[#C9A24D]">0</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- 🔹 EXPERT CARDS -->
+
+
+  <!-- 🔹 INSTALLATION & USAGE -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div class="glass rounded-3xl p-10">
+      <h2 class="text-3xl font-bold text-[#C9A24D] mb-6">
+        Installation & Usage Tips
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 text-gray-300 text-sm">
+        <ul class="space-y-3">
+          <li>✔ Always prepare surface before installation</li>
+          <li>✔ Use recommended adhesive & grout</li>
+          <li>✔ Maintain proper spacing between tiles</li>
+        </ul>
+
+        <ul class="space-y-3">
+          <li>✔ Clean tiles with mild cleaners</li>
+          <li>✔ Avoid harsh chemicals</li>
+          <li>✔ Regular polishing for shine</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="relative bg-white/5 backdrop-blur-xl border-t border-white/10 text-gray-300 pt-16">
+
+    <!-- Glow Effect -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-[#C9A24D]/10 via-transparent to-[#C9A24D]/10 pointer-events-none">
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- BRAND -->
+      <div>
+        <h2 class="text-3xl font-bold text-[#C9A24D] mb-4">CERA’S</h2>
+        <p class="text-sm leading-relaxed text-gray-400">
+          Elevating spaces with premium ceramic & porcelain tiles,
+          crafted for timeless luxury.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="home.html" onclick="event.preventDefault(); showLoaderAndRedirect('home.html')"
+              class="hover:text-[#C9A24D] transition">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="category.html" onclick="event.preventDefault(); showLoaderAndRedirect('category.html')"
+              class="hover:text-[#C9A24D] transition">
+              Categories
+            </a>
+          </li>
+          <li>
+            <a href="p.html" onclick="event.preventDefault(); showLoaderAndRedirect('p.html')"
+              class="hover:text-[#C9A24D] transition">
+              Expert Corner
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+              class="hover:text-[#C9A24D] transition">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Our Products</h3>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li>Wall Tiles</li>
+          <li>Floor Tiles</li>
+          <li>Bathroom Tiles</li>
+          <li>Outdoor Tiles</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Get in Touch</h3>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li>📍 Karachi, Pakistan</li>
+          <li>📞 +92 3172348329</li>
+          <li>✉️ cera's@gmail.com</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="relative border-t border-white/10 mt-14"></div>
+
+    <!-- BOTTOM BAR -->
+    <div class="relative max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p class="text-sm text-gray-400">
+        © 2025 <span class="text-[#C9A24D]">CERA’S</span>. All rights reserved.
+      </p>
+
+      <!-- SOCIAL -->
+      <div class="flex gap-5 text-xl">
+        <a href="https://www.instagram.com/"
+          onclick="event.preventDefault(); showLoaderAndRedirect('https://www.instagram.com/')"
+          class="hover:text-[#C9A24D] h-10 w-10 "><img src="social copy.png" alt=""></a>
+        <a href="https://www.facebook.com/"
+          onclick="event.preventDefault(); showLoaderAndRedirect('https://www.facebook.com/')"
+          class="hover:text-[#C9A24D] h-10 w-10 transition"><img src="facebook.png" alt=""></a>
+        <a href="https://x.com/" onclick="event.preventDefault(); showLoaderAndRedirect('https://x.com/')"
+          class="hover:text-[#C9A24D] h-10 w-10 transition"><img src="twitter.png" alt=""></a>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+  <!--  -->
+
+  <script>
+    function calculateTiles() {
+      const area = document.getElementById("roomArea").value;
+      const size = document.getElementById("tileSize").value;
+      const waste = document.getElementById("wastage").value;
+
+      if (area <= 0 || size === "") {
+        alert("Please enter area and select tile size");
+        return;
+      }
+
+      const dimensions = size.split("x");
+      const length = dimensions[0];
+      const width = dimensions[1];
+
+      const tileArea = (length * width) / 144; // inches → sq.ft
+
+      let tiles = area / tileArea;
+      tiles += tiles * (waste / 100);
+
+      document.getElementById("tileResult").innerText = Math.ceil(tiles);
+    }
+  </script>
+
+
+
+</body>
+
+</html>

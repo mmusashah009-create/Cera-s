@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+
+<body class="bg-[#0F172A] text-[#F9FAFB]">
+<!-- loader code -->
+<div id="pageLoader"
+     class="hidden fixed inset-0 z-50 flex items-center justify-center
+            bg-black/50 backdrop-blur-md transition-opacity duration-500">
+
+  <div class="relative flex items-center justify-center">
+    <div class="w-24 h-24 rounded-full border-4 border-[#C9A24D]/30
+                border-t-[#C9A24D] animate-spin
+                shadow-[0_0_30px_#C9A24D]"></div>
+
+    <span class="absolute text-[#C9A24D] font-bold tracking-widest text-lg">
+      CERA’S
+    </span>
+  </div>
+</div>
+
+
+  
+<nav class="w-full sticky top-0 z-50 bg-[#0F172A] backdrop-blur px-6 py-4 border-b border-gray-300">
+  <div class="flex items-center justify-between max-w-7xl mx-auto relative">
+
+    <!-- Brand -->
+    <h1 class="text-2xl font-bold text-[#C9A24D]">CERA’S</h1>
+
+    <!-- Desktop Links (Centered) -->
+    <ul class="hidden lg:flex gap-8 text-lg font-medium text-white absolute left-1/2 transform -translate-x-1/2">
+      <li><a href="home.html" onclick="event.preventDefault(); showLoaderAndRedirect('home.html')" class="hover:text-[#C9A24D]">Home</a></li>
+      <li><a href="category.html" onclick="event.preventDefault(); showLoaderAndRedirect('category.html')" class="hover:text-[#C9A24D]">Category</a></li>
+      <li><a href="#.html" onclick="event.preventDefault(); showLoaderAndRedirect('#.html')" class="hover:text-[#C9A24D]">Products Details</a></li>
+      <li><a href="expert corner.html" onclick="event.preventDefault(); showLoaderAndRedirect('expert corner.html')" class="hover:text-[#C9A24D]">Expert Corner</a></li>
+      <li><a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')" class="hover:text-[#C9A24D]">Contact</a></li>
+    </ul>
+
+    <!-- Contact Us Button (Right, Desktop Only) -->
+    <a href="contact.html"
+       onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+       class="hidden lg:inline-block relative px-6 py-2 font-semibold rounded-lg border-2 border-[#C9A24D] text-[#C9A24D] hover:text-[#0F172A] hover:bg-gradient-to-r hover:from-[#C9A24D] hover:to-[#FFD966] transition-all duration-300">
+       Contact Us
+    </a>
+
+    <!-- Hamburger (Mobile + iPad) -->
+    <button id="hamburger" class="lg:hidden flex flex-col gap-1">
+      <span class="w-6 h-[3px] bg-white block"></span>
+      <span class="w-6 h-[3px] bg-white block"></span>
+      <span class="w-6 h-[3px] bg-white block"></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden lg:hidden bg-[#0F172A] border-b border-gray-300 px-6 py-6">
+  <ul class="flex flex-col gap-4 text-lg text-white">
+    <li><a href="home.html" onclick="event.preventDefault(); showLoaderAndRedirect('home.html')" class="hover:text-[#C9A24D]">Home</a></li>
+    <li><a href="category.html" onclick="event.preventDefault(); showLoaderAndRedirect('category.html')" class="hover:text-[#C9A24D]">Category</a></li>
+    <li><a href="#.html" onclick="event.preventDefault(); showLoaderAndRedirect('#.html')" class="hover:text-[#C9A24D]">Products Details</a></li>
+    <li><a href="expert corner.html" onclick="event.preventDefault(); showLoaderAndRedirect('expert corner.html')" class="hover:text-[#C9A24D]">Expert Corner</a></li>
+    <li><a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')" class="hover:text-[#C9A24D]">Contact</a></li>
+  </ul>
+
+  <!-- Premium Contact Us Button -->
+  <div class="mt-10">
+    <a href="contact.html"
+       onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+       class="block text-center relative px-6 py-3 font-semibold rounded-lg
+              border-2 border-[#C9A24D] text-[#C9A24D]
+              hover:text-[#0F172A]
+              hover:bg-gradient-to-r hover:from-[#C9A24D] hover:to-[#FFD966]
+              shadow-lg hover:shadow-[0_0_25px_rgba(201,162,77,0.6)]
+              transition-all duration-300">
+       Contact Us
+    </a>
+  </div>
+  
+</div>
+
+
+
+  <section class="relative h-[90vh] flex items-center justify-center">
+  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+  <div class="relative text-center max-w-3xl">
+    <h2 class="text-5xl font-bold mb-6">Redefining Spaces with Premium Tiles</h2>
+    <p class="text-gray-300 mb-8">Luxury ceramic, vitrified & designer tiles for home and commercial spaces</p>
+    <a href="#" class="px-8 py-3 bg-[#C9A24D] text-black rounded-full font-semibold hover:bg-[#E6B566]">View Catalogue</a>
+  </div> 
+</section>
+
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+  <h2 class="text-5xl text-center mb-16 font-bold text-[#C9A24D]">Tile Categories</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- card1 -->
+    <div onclick="showLoaderAndRedirect('cards3.html')" class="bg-[#1F2933] rounded-2xl overflow-hidden hover:scale-105 transition">
+      <img src="assets/outdoor marble tiles.webp" class="h-56 w-full object-cover" />
+      <div class="p-6">
+        <h3 class="text-xl mb-2">Outdoor Marble Tiles</h3>
+        <p class="text-gray-400 text-sm">Perfect for pations and gardens</p>
+      </div>
+    </div>
+<!-- card 2 -->
+
+    <div onclick="showLoaderAndRedirect('cards.html')" class="bg-[#1F2933] rounded-2xl overflow-hidden hover:scale-105 transition">
+      <img src="assets/waal.jpg" class="h-56 w-full object-cover" />
+      <div class="p-6">
+        <h3 class="text-xl mb-2"></h3>Wall tiles
+        <p class="text-gray-400 text-sm">Stylish & easy-to-clean surface.</p>
+      </div>
+    </div>
+<!-- card 3 -->
+<div onclick="showLoaderAndRedirect('cards2.html')" class="bg-[#1F2933] rounded-2xl overflow-hidden hover:scale-105 transition">
+<img src="assets/special tiles.jpg" class="h-56 w-full object-cover" />
+<div class="p-6">
+  <h3 class="text-xl mb-2">Special tiles</h3>
+  <p class="text-gray-400 text-sm">Stylish & easy-to-clean surface.</p>
+</div>
+</div>
+    <!-- card 4 -->
+    <div  onclick="showLoaderAndRedirect('cards.html')" class="bg-[#1F2933] rounded-2xl overflow-hidden hover:scale-105 transition">
+      <img src="assets/marmol.jpg" class="h-56 w-full object-cover" />
+      <div class="p-6">
+        <h3 class="text-xl mb-2">kitchen  Tiles</h3>
+        <p class="text-gray-400 text-sm">Kitchen, bathroom & living room wall tiles</p>
+      </div>
+    </div>
+
+    <!-- card 5 -->
+    <div onclick="showLoaderAndRedirect('cards2.html')" class="bg-[#1F2933] rounded-2xl overflow-hidden hover:scale-105 transition">
+      <img src="assets/floor tiles.avif" class="h-56 w-full object-cover" />
+      <div class="p-6">
+        <h3 class="text-xl mb-2">Floor Tiles</h3>
+        <p class="text-gray-400 text-sm">Durable flooring for home & offices</p>
+      </div>
+    </div>
+    <!-- card 6 -->
+    <div onclick="showLoaderAndRedirect('cards.html')" class="bg-[#1F2933] rounded-2xl overflow-hidden hover:scale-105 transition">
+      <!-- <a href="index.html"> -->
+         <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"
+          class="h-56 w-full object-cover" /></a>
+
+      <div class="p-6">
+        <h3 class="text-xl mb-2">Special Tiles</h3>
+        <p class="text-gray-400 text-sm">Germ-free, anti-static & cool roof tiles</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- about section -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+  <h2 class="text-5xl font-bold text-[#C9A24D]  text-center mb-16">About CERA’S Tiles</h2>
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+    
+
+    <!-- LEFT IMAGE -->
+    <div class="overflow-hidden rounded-2xl shadow-xl">
+      <img 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+        alt="Luxury Interior Tiles"
+        class="w-full h-120 object-cover hover:scale-105 transition duration-700"
+      />
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div>
+      <!-- <h2 class="text-4xl font-bold text-[text-white]">
+        About CERA’S Tiles
+      </h2> -->
+
+      <div class="w-12 h-1  my-6 rounded-full"></div>
+
+      <p class="text-white leading-relaxed mb-5">
+        <span class="font-semibold font-bold text-[#C9A24D]">Welcome to CERA’S Tiles Pakistan,</span>
+        a leading name in the realm of tile manufacturing, dedicated to crafting
+        superior-quality floor tiles that redefine spaces with elegance and endurance.
+      </p>
+
+      <p class="text-white leading-relaxed mb-5">
+        With an illustrious history in the industry, we pride ourselves on producing
+        an extensive range of top-notch tiles that elevate interiors and endure
+        the test of time.
+      </p>
+
+      <p class="text-white leading-relaxed mb-8">
+        Our state-of-the-art manufacturing process combines advanced technology with
+        the finest raw materials, resulting in tiles of exceptional quality,
+        resilience, and aesthetic appeal.
+      </p>
+
+      <!-- BUTTON -->
+      
+
+   <a href="contact.html"
+   onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+         class="inline-block bg-[#2F3C7E] text-white px-8 py-4 rounded-full
+                font-medium shadow-lg hover:bg-[#1E2A5A]
+                transition duration-300">
+        Contact Us
+      </a>
+    </div>
+
+  </div>
+</section>
+<script>
+  function showLoaderAndRedirect(url) {
+    const loader = document.getElementById("pageLoader");
+    loader.classList.remove("hidden");
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 1200); // Increased from 1200ms (1.2s) to 2000ms (2s)
+  }
+</script>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      // Open/close menu
+      mobileMenu.classList.toggle('hidden');
+
+      // Animating The Hamburger
+      const lines = hamburger.querySelectorAll("span");
+
+      lines[0].classList.toggle("rotate-45");
+      lines[0].classList.toggle("translate-y-2");
+
+      lines[1].classList.toggle("opacity-0");
+
+      lines[2].classList.toggle("-rotate-45");
+      lines[2].classList.toggle("-translate-y-2");
+    });
+  </script>
+  <script src="app.js"></script>
+
+</body>

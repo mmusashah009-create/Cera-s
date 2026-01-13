@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Tile Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body { font-family: 'Montserrat', sans-serif; }
+  h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+</style>
+<body class="bg-[#0F172A] text-[#F9FAFB]">
+  <!-- loader code -->
+  <div id="pageLoader"
+       class="hidden fixed inset-0 z-50 flex items-center justify-center
+              bg-black/50 backdrop-blur-md transition-opacity duration-500">
+  
+    <div class="relative flex items-center justify-center">
+      <div class="w-24 h-24 rounded-full border-4 border-[#C9A24D]/30
+                  border-t-[#C9A24D] animate-spin
+                  shadow-[0_0_30px_#C9A24D]"></div>
+  
+      <span class="absolute text-[#C9A24D] font-bold tracking-widest text-lg">
+        CERA’S
+      </span>
+    </div>
+  </div>
+  
+  
+    
+  <nav class="w-full sticky top-0 z-50 bg-[#0F172A] backdrop-blur px-6 py-4 border-b border-gray-300">
+    <div class="flex items-center justify-between max-w-7xl mx-auto relative">
+  
+      <!-- Brand -->
+      <h1 class="text-2xl font-bold text-[#C9A24D]">CERA’S</h1>
+  
+      <!-- Desktop Links (Centered) -->
+      <ul class="hidden lg:flex gap-8 text-lg font-medium text-white absolute left-1/2 transform -translate-x-1/2">
+        <li><a href="home.html" onclick="event.preventDefault(); showLoaderAndRedirect('home.html')" class="hover:text-[#C9A24D]">Home</a></li>
+        <li><a href="category.html" onclick="event.preventDefault(); showLoaderAndRedirect('category.html')" class="hover:text-[#C9A24D]">Category</a></li>
+        <li><a href="#.html" onclick="event.preventDefault(); showLoaderAndRedirect('#.html')" class="hover:text-[#C9A24D]">Products Details</a></li>
+        <li><a href="expert corner.html" onclick="event.preventDefault(); showLoaderAndRedirect('expert corner.html')" class="hover:text-[#C9A24D]">Expert Corner</a></li>
+        <li><a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')" class="hover:text-[#C9A24D]">Contact</a></li>
+      </ul>
+  
+      <!-- Contact Us Button (Right, Desktop Only) -->
+      <a href="contact.html"
+         onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+         class="hidden lg:inline-block relative px-6 py-2 font-semibold rounded-lg border-2 border-[#C9A24D] text-[#C9A24D] hover:text-[#0F172A] hover:bg-gradient-to-r hover:from-[#C9A24D] hover:to-[#FFD966] transition-all duration-300">
+         Contact Us
+      </a>
+  
+      <!-- Hamburger (Mobile + iPad) -->
+      <button id="hamburger" class="lg:hidden flex flex-col gap-1">
+        <span class="w-6 h-[3px] bg-white block"></span>
+        <span class="w-6 h-[3px] bg-white block"></span>
+        <span class="w-6 h-[3px] bg-white block"></span>
+      </button>
+  
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-[#0F172A] border-b border-gray-300 px-6 py-6">
+    <ul class="flex flex-col gap-4 text-lg text-white">
+      <li><a href="home.html" onclick="event.preventDefault(); showLoaderAndRedirect('home.html')" class="hover:text-[#C9A24D]">Home</a></li>
+      <li><a href="category.html" onclick="event.preventDefault(); showLoaderAndRedirect('category.html')" class="hover:text-[#C9A24D]">Category</a></li>
+      <li><a href="#.html" onclick="event.preventDefault(); showLoaderAndRedirect('#.html')" class="hover:text-[#C9A24D]">Products Details</a></li>
+      <li><a href="expert corner.html" onclick="event.preventDefault(); showLoaderAndRedirect('expert corner.html')" class="hover:text-[#C9A24D]">Expert Corner</a></li>
+      <li><a href="contact.html" onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')" class="hover:text-[#C9A24D]">Contact</a></li>
+    </ul>
+  
+    <!-- Premium Contact Us Button -->
+    <div class="mt-10">
+      <a href="contact.html"
+         onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+         class="block text-center relative px-6 py-3 font-semibold rounded-lg
+                border-2 border-[#C9A24D] text-[#C9A24D]
+                hover:text-[#0F172A]
+                hover:bg-gradient-to-r hover:from-[#C9A24D] hover:to-[#FFD966]
+                shadow-lg hover:shadow-[0_0_25px_rgba(201,162,77,0.6)]
+                transition-all duration-300">
+         Contact Us
+      </a>
+    </div>
+    
+  </div>
+  
+
+<!-- HEADER -->
+<section class="max-w-7xl mx-auto px-6 py-14">
+  <h1 class="text-5xl font-bold text-center text-[#C9A24D] tracking-wide">
+    Floor Tile Collection
+  </h1>
+  <p class="text-center text-gray-400 mt-4">
+    Crafted for luxury interiors
+  </p>
+</section>
+
+<!-- GALLERY -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+
+    <!-- CARD 1 -->
+    <a href="detail.html?img=assets/17.jpg&name=Elite%20Marble%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/17.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5562</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="detail.html?img=assets/18.jpg&name=Royal%20Gold%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/18.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5563</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="detail.html?img=assets/19.jpg&name=Pearl%20White%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/19.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5564</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 4 -->
+    <a href="detail.html?img=assets/20.jpg&name=Obsidian%20Black%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/20.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5565</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 5 -->
+    <a href="detail.html?img=assets/21.jpg&name=Oak%20Wood%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/21.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5566</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 6 -->
+      <a href="detail.html?img=assets/22.jpg&name=Silk%20Matte%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/22.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5567</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 7 -->
+    <a href="detail.html?img=assets/23.jpg&name=Cloud%20Grey%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/23.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5568</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 8 -->
+    <a href="detail.html?img=assets/24.jpg&name=Chef%20Stone%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/24.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5569</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 9 -->
+    <a href="detail.html?img=assets/25.jpg&name=Urban%20Pattern%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/25.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5570</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 10 -->
+    <a href="detail.html?img=assets/26.jpg&name=Granite%20Grey%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/26.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5571</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 11 -->
+    <a href="detail.html?img=assets/27.jpg&name=Sandstone%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/27.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5572</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 12 -->
+      <a href="detail.html?img=assets/28.jpg&name=Volcanic%20Stone%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/28.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5573</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 13 -->
+    <a href="detail.html?img=assets/29.jpg&name=Rustic%20Patio%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/29.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5574</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 14 -->
+    <a href="detail.html?img=assets/30.jpg&name=Ivory%20Outdoor%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/30.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5575</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 15 -->
+    <a href="detail.html?img=assets/31.jpg&name=Terrace%20Stone%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/31.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+              <h3 class="font-semibold">PG-5576</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 16 -->
+    <a href="detail.html?img=assets/32.jpg&name=Natural%20Rock%20Tile&cat=Floor%20tiles" class="group">
+      <div class="bg-[#111827] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="assets/32.jpg" class="h-60 w-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold">PG-5577</h3>
+          <p class="text-gray-400 text-sm">Floor tiles</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+<footer class="relative bg-white/5 backdrop-blur-xl border-t border-white/10 text-gray-300 pt-16">
+
+  <!-- Glow Effect -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[#C9A24D]/10 via-transparent to-[#C9A24D]/10 pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+    <!-- BRAND -->
+    <div>
+      <h2 class="text-3xl font-bold text-[#C9A24D] mb-4">CERA’S</h2>
+      <p class="text-sm leading-relaxed text-gray-400">
+        Elevating spaces with premium ceramic & porcelain tiles,
+        crafted for timeless luxury.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href="home.html"
+             onclick="event.preventDefault(); showLoaderAndRedirect('home.html')"
+             class="hover:text-[#C9A24D] transition">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="category.html"
+             onclick="event.preventDefault(); showLoaderAndRedirect('category.html')"
+             class="hover:text-[#C9A24D] transition">
+            Categories
+          </a>
+        </li>
+        <li>
+          <a href="expert corner.html"
+             onclick="event.preventDefault(); showLoaderAndRedirect('expert corner.html')"
+             class="hover:text-[#C9A24D] transition">
+            Expert Corner
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+             onclick="event.preventDefault(); showLoaderAndRedirect('contact.html')"
+             class="hover:text-[#C9A24D] transition">
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-4">Our Products</h3>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li>Wall Tiles</li>
+        <li>Floor Tiles</li>
+        <li>Bathroom Tiles</li>
+        <li>Outdoor Tiles</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-4">Get in Touch</h3>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li>📍 Karachi, Pakistan</li>
+        <li>📞 +92 3172348329</li>
+        <li>✉️ cera's@gmail.com</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="relative border-t border-white/10 mt-14"></div>
+
+  <!-- BOTTOM BAR -->
+  <div class="relative max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+    <p class="text-sm text-gray-400">
+      © 2025 <span class="text-[#C9A24D]">CERA’S</span>. All rights reserved.
+    </p>
+
+    <!-- SOCIAL -->
+    <div class="flex gap-5 text-xl">
+      <a href="https://www.instagram.com/"
+         onclick="event.preventDefault(); showLoaderAndRedirect('https://www.instagram.com/')"
+         class="hover:text-[#C9A24D] h-10 w-10 "><img src="assets/social copy.png" alt=""></a>
+      <a href="https://www.facebook.com/"
+         onclick="event.preventDefault(); showLoaderAndRedirect('https://www.facebook.com/')"
+         class="hover:text-[#C9A24D] h-10 w-10 transition"><img src="assets/facebook.png" alt=""></a>
+      <a href="https://x.com/"
+         onclick="event.preventDefault(); showLoaderAndRedirect('https://x.com/')"
+         class="hover:text-[#C9A24D] h-10 w-10 transition"><img src="assets/twitter.png" alt=""></a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  function showLoaderAndRedirect(url) {
+    const loader = document.getElementById("pageLoader");
+    loader.classList.remove("hidden");
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 1200); // Increased from 1200ms (1.2s) to 2000ms (2s)
+  }
+</script>
+</body>
+</html>
+
+
